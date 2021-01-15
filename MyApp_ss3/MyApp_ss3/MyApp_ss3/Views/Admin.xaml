@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp_ss3.Views.Admin">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="20,15,15,10">
+            <Label Text="Welcome VQT APP!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            <Button x:Name="Aboutbutton" Text="Tìm Kiếm" Clicked="Aboutbutton_Clicked"/>
+            <Button x:Name="AddListErrbutton" Text="Thêm danh sách lỗi " Clicked="AddListErrbutton_Clicked"/>
+            <Button x:Name="Addpeoplebutton" Text="Thêm hồ sơ" Clicked="Addpeoplebutton_Clicked"/>
+            <Button x:Name="AddErrbutton" Text="Thêm xe vi phạm" Clicked="AddErrbutton_Clicked"/>
+            <Button x:Name="SearchListErrbutton" Text="Tra cứu lỗi vi phạm" Clicked="SearchListErrbutton_Clicked"/>
+            <Button x:Name="SearchErrbutton" Text="Tra cứu xe vi phạm" Clicked="SearchErrbutton_Clicked"/>
+    
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

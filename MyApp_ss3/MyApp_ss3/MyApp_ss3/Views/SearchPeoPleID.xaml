@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp_ss3.Views.SearchPeoPleID">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <SearchBar 
+              x:Name="Search_c" 
+            Placeholder="Search people by Id..."
+           CancelButtonColor="Blue"
+           PlaceholderColor="Orange"
+           TextColor="Black"
+           TextTransform="Lowercase"
+           HorizontalTextAlignment="Center"
+           FontSize="Medium"
+           FontAttributes="Italic"
+                TextChanged="Search_c_TextChanged"
+           />
+
+            <ListView x:Name="SuggestionListview" VerticalOptions="FillAndExpand" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="0.8*" />
+                                    <ColumnDefinition Width="1.5*" />
+                                    <ColumnDefinition Width="0.8*" />
+                                    <ColumnDefinition Width="0.8*" />
+                                    <ColumnDefinition Width="0.4*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                <Label Grid.Column="1" Text="{Binding CMND}" HorizontalTextAlignment="Center"/>
+                                <Label Grid.Column="2" Text="{Binding Address}" HorizontalTextAlignment="Center"/>
+                                <Label Grid.Column="3" Text="{Binding BX_Xemay}" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="4" Text="{Binding BX_Oto}" HorizontalTextAlignment="Center" />
+                                <Label Grid.Column="5" Text="{Binding Decription}" HorizontalTextAlignment="Center" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <!--<SearchBar Placeholder="Search items..." />-->
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

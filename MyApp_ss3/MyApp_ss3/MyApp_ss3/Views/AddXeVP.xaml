@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp_ss3.Views.AddXeVP">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="BX" Placeholder="Biển số xe"/>
+            <Entry x:Name="TG_vp" Placeholder="Thời gian vi phạm"/>
+            <Entry x:Name="Address" Placeholder="Địa điểm:"/>
+            <Entry x:Name="IdVP" Placeholder="Mã lỗi vi phạm"/>
+            <Entry x:Name="money" Placeholder="Tiền phạt"/>
+                <Entry x:Name="TT" Placeholder="Trạng thái"/>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="Savebutton" Text="Save" Clicked="Savebutton_Clicked"/>
+                <Button x:Name="Showbutton" Text="Show" Clicked="Showbutton_Clicked"/>
+                <Button x:Name="Deletebutton_1" Text="Delete one" Clicked="Deletebutton_1_Clicked"/>
+                <Button x:Name="Deletebutton" Text="Delete all" Clicked="Deletebutton_Clicked"/>
+
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical"
+             VerticalOptions="Fill"
+             HorizontalOptions="StartAndExpand" Margin="20,25,10,10">
+                <ListView x:Name="Datalist" VerticalOptions="FillAndExpand" RowHeight="100">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.5*" />
+                                        <ColumnDefinition Width="0.5*" />
+                                        <ColumnDefinition Width="0.5*" />
+                                        <ColumnDefinition Width="0.6*" />
+                                        <ColumnDefinition Width="0.6*" />
+                                        <ColumnDefinition Width="0.6*" />
+                                        
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding BX}" FontAttributes="Bold" />
+                                    <Label Grid.Column="1" Text="{Binding TG_vp}" HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Column="2" Text="{Binding IdVP}" HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Column="3" Text="{Binding Address}" HorizontalTextAlignment="Center" />
+                                    <Label Grid.Column="4" Text="{Binding money}" HorizontalTextAlignment="Center" />
+                                    <Label Grid.Column="5" Text="{Binding TT}" HorizontalTextAlignment="Center" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
